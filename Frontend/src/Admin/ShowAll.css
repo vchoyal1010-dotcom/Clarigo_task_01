@@ -1,0 +1,209 @@
+.sap-page {
+  padding: 20px;
+  background: #f6f7fb;
+  min-height: 100vh;
+}
+
+.sap-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.sap-table-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.sap-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.sap-table th,
+.sap-table td {
+  padding: 14px 12px;
+  border-top: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.sap-table th:nth-child(1),
+.sap-table td:nth-child(1) {
+  width: 200px;
+}
+
+.sap-table th:nth-child(6),
+.sap-table td:nth-child(6) {
+  width: 120px;
+  text-align: center;
+}
+
+.sap-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sap-product-cell img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.sap-product-cell span {
+  font-size: 14px;
+}
+
+.sap-status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.sap-active {
+  background: #e6f7f1;
+  color: #0f9d58;
+}
+
+.sap-inactive {
+  background: #fdecea;
+  color: #d93025;
+}
+
+.sap-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.sap-icon {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+
+.sap-no-data {
+  text-align: center;
+  padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+
+  .sap-page {
+    padding: 15px;
+  }
+
+  .sap-title {
+    font-size: 18px;
+  }
+
+  .sap-table-box {
+    padding: 15px;
+  }
+
+  .sap-table th,
+  .sap-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .sap-product-cell img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sap-product-cell span {
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .sap-table-box {
+    overflow-x: auto;
+  }
+
+  .sap-table {
+    min-width: 600px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .sap-page {
+    padding: 10px;
+  }
+
+  .sap-title {
+    font-size: 16px;
+  }
+
+  .sap-table th,
+  .sap-table td {
+    font-size: 12px;
+    padding: 8px 6px;
+  }
+
+  .sap-product-cell {
+    gap: 6px;
+  }
+
+  .sap-product-cell img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .sap-actions {
+    gap: 6px;
+  }
+
+}
+
+.sap-search-box {
+  margin-bottom: 15px;
+}
+
+.sap-search-input {
+  width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  background-color:#e5e7eb;
+}
+
+.sap-stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.sap-stat-box {
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  min-width: 140px;
+}
+
+.sap-stat-box p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 5px;
+}
+
+.sap-stat-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}

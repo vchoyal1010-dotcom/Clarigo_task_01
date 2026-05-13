@@ -1,0 +1,99 @@
+.update-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.update-card {
+  width: 300px; 
+  background: #fff;
+  padding: 22px; 
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15); 
+  text-align: center;
+  animation: fadeIn 0.25s ease;
+}
+
+.update-title {
+  margin-bottom: 12px;
+  font-size: 18px; 
+  font-weight: 500;
+}
+
+.update-input {
+  width: 100%;
+  padding: 9px; 
+  margin: 6px 0; 
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 13px; 
+  transition: 0.2s;
+}
+
+.update-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 4px rgba(102,126,234,0.3); 
+}
+
+.update-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.update-save {
+  flex: 1;
+  margin-right: 5px;
+  padding: 9px;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  border: none;
+  color: white;
+  border-radius: 7px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.update-save:hover {
+  opacity: 0.9;
+}
+
+.update-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.update-cancel {
+  flex: 1;
+  margin-left: 5px;
+  padding: 9px;
+  background: #eee;
+  border: none;
+  border-radius: 7px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.update-cancel:hover {
+  background: #ddd;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95); /* smoother */
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

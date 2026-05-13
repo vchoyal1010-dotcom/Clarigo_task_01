@@ -1,0 +1,235 @@
+/* Registration.css - Fixed, no overflow */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.reg-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  max-width: 320px;
+  max-height: 90vh;
+  margin: 30px auto;
+  padding: 20px 35px;
+  animation: slideIn 0.5s ease-out;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.reg-container::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reg-title {
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.reg-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+/* Input Group */
+.reg-input-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.reg-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.reg-input {
+  width: 100%;
+  padding: 8px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  /* transition: all 0.3s ease; */
+  /* outline: none; */
+  background: #ffffff;
+  color: #333;
+}
+
+.reg-input:hover {
+  border-color: #999;
+}
+
+.reg-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+/* Button */
+.reg-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px 0 5px;
+}
+ .reg-admin-btn{
+  width: 40%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px 0 5px;
+}
+
+.reg-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Message */
+.reg-message {
+  text-align: center;
+  margin: 10px 0 5px;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #f0f4ff;
+  color: #667eea;
+  border-left: 3px solid #667eea;
+}
+
+/* Paragraph and Link */
+.reg-login-text {
+  text-align: center;
+  margin: 15px 0 5px;
+  color: #666;
+  font-size: 14px;
+}
+
+.reg-login-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.reg-login-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-height: 700px) {
+  .reg-container {
+    padding: 20px 25px;
+  }
+  
+  .reg-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .reg-input-group {
+    margin-bottom: 12px;
+  }
+  
+  .reg-input {
+    padding: 10px 12px;
+  }
+  
+  .reg-btn {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-container {
+    padding: 20px;
+  }
+  
+  .reg-title {
+    font-size: 24px;
+  }
+  
+  .reg-label {
+    font-size: 12px;
+  }
+  
+  .reg-input {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper .reg-input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}

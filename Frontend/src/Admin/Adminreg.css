@@ -1,0 +1,213 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.admin-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 320px;
+  max-height: 95vh;
+  margin: 37px auto;
+  padding: 30px 35px;
+  animation: slideIn 0.5s ease-out;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  align-items: center;
+
+}
+
+.admin-container::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-title {
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.admin-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.admin-input-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.admin-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  outline: none;
+  background: #ffffff;
+  color: #333;
+}
+
+.admin-input:hover {
+  border-color: #999;
+}
+
+.admin-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.admin-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px 0 5px;
+}
+
+.admin-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.admin-message {
+  text-align: center;
+  margin: 10px 0 5px;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #f0f4ff;
+  color: #667eea;
+  border-left: 3px solid #667eea;
+}
+
+.admin-login-text {
+  text-align: center;
+  margin: 15px 0 5px;
+  color: #666;
+  font-size: 14px;
+}
+
+.admin-login-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.admin-login-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+@media (max-height: 700px) {
+  .admin-container {
+    padding: 20px 25px;
+  }
+  
+  .admin-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .admin-input-group {
+    margin-bottom: 12px;
+  }
+  
+  .admin-input {
+    padding: 10px 12px;
+  }
+  
+  .admin-btn {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-container {
+    padding: 20px;
+  }
+  
+  .admin-title {
+    font-size: 24px;
+  }
+  
+  .admin-label {
+    font-size: 12px;
+  }
+  
+  .admin-input {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper .admin-input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}

@@ -1,0 +1,48 @@
+.adminquery-container {
+  padding: 40px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.adminquery-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.adminquery-empty {
+  color: #777;
+}
+
+.adminquery-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.adminquery-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.adminquery-card:hover {
+  transform: translateY(-5px);
+}
+
+.adminquery-name {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.adminquery-text {
+  margin: 5px 0;
+  color: #555;
+}
+
+.adminquery-message {
+  margin-top: 10px;
+  color: #333;
+  font-weight: 500;
+}

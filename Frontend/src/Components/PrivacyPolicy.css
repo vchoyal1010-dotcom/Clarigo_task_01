@@ -1,0 +1,50 @@
+.privacy-page-container {
+  max-width: 800px;
+  margin-top: 0px;
+  margin: 0px auto;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.privacy-back-icon {
+  cursor: pointer;
+  margin-bottom: 0px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.privacy-page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 30px;
+}
+
+.privacy-heading {
+  margin-top: 0px;
+  color: #444;
+    font-size: 20px;
+}
+
+.privacy-text {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.privacy-list {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.privacy-list li {
+  margin-bottom: 5px;
+}
+
+.privacy-footer-text {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+}

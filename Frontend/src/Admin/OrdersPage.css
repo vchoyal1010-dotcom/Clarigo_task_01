@@ -1,0 +1,170 @@
+.sao-page {
+  padding: 20px;
+  background: #f5f6fa;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sao-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.sao-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.sao-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.sao-card p {
+  font-size: 14px;
+  color: #777;
+}
+
+.sao-card h2 {
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.green { color: #16a34a; }
+.red { color: #dc2626; }
+.blue { color: #2563eb; }
+.yellow { color: #ca8a04; }
+
+.sao-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.sao-search {
+  width: 250px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.sao-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.sao-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sao-btn:hover {
+  background: #f1f1f1;
+}
+
+.sao-btn.primary {
+  background: #22c55e;
+  color: white;
+  border: none;
+}
+
+.sao-btn.primary:hover {
+  background: #16a34a;
+}
+
+.sao-table-box {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.sao-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sao-table thead {
+  background: #f9fafb;
+}
+
+.sao-table th,
+.sao-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.sao-table tr {
+  border-top: 1px solid #eee;
+}
+
+.sao-table tr:hover {
+  background: #f9fafb;
+}
+
+.right {
+  text-align: right;
+}
+
+.sao-status {
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.sao-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.sao-icons .edit {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.sao-icons .delete {
+  color: #dc2626;
+  cursor: pointer;
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
+
+@media (max-width: 900px) {
+  .sao-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sao-actions {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .sao-search {
+    width: 100%;
+  }
+
+  .sao-table {
+    font-size: 12px;
+  }
+}
+.email-cell2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

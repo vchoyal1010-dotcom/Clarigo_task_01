@@ -1,0 +1,177 @@
+body {
+  background: #f5f5f5;
+}
+
+/* MAIN CONTAINER */
+.contactus-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 60px auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  overflow: hidden;
+  position: relative;
+}
+.contactus-arrow{
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+/* FAKE LAYER EFFECT */
+.contactus-container::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+  z-index: -1;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.contactus-container::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 40px;
+  width: 90%;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+  z-index: -2;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* LEFT SIDE */
+.contactus-left {
+  width: 40%;
+  padding: 40px;
+  background: #f8f8f8;
+}
+
+.contactus-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.contactus-subtitle {
+  color: #666;
+  font-size: 14px;
+}
+
+/* INFO BOX */
+.contactus-info {
+  margin-top: 20px;
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contactus-highlight {
+  font-weight: 600;
+}
+
+/* RIGHT SIDE FORM */
+.contactus-form {
+  width: 60%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ROW */
+.contactus-row {
+  display: flex;
+  gap: 15px;
+}
+
+/* INPUTS */
+.contactus-input,
+.contactus-textarea {
+  width: 100%;
+  margin-top: 0px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+/* ROW INPUT FIX */
+.contactus-row .contactus-input {
+  flex: 1;
+}
+
+/* FOCUS */
+.contactus-input:focus,
+.contactus-textarea:focus {
+  border-color: #333;
+  background: white;
+}
+
+/* TEXTAREA */
+.contactus-textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* BUTTON */
+.contactus-button {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contactus-button:hover {
+  background: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contactus-container {
+    flex-direction: column;
+  }
+
+  .contactus-left,
+  .contactus-form {
+    width: 100%;
+  }
+
+  .contactus-row {
+    flex-direction: column;
+  }
+}
+
+/* FIELD WRAPPER */
+.contactus-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* LABEL STYLE */
+.contactus-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* ROW FIX */
+.contactus-row {
+  display: flex;
+  gap: 15px;
+}

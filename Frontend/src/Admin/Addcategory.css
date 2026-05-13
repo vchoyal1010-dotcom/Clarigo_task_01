@@ -1,0 +1,173 @@
+.cat-container1 {
+  width: 100%;
+  padding:20px 20px;
+  background: #f6f7fb;
+}
+.cat-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #111827;
+}
+.cat-form {
+ display: flex;
+gap: 10px;
+align-items: center;
+flex-wrap: wrap;
+
+background: #fff;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+
+height: 100px;       
+overflow: hidden;
+}
+
+.cat-input,
+.cat-input-file {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #f9fafb;
+}
+
+.cat-submit-btn {
+  padding: 10px 14px;
+  background: #0f172a; 
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.cat-submit-btn:hover {
+  background: #1e293b;
+}
+
+.cat-table-box {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.cat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cat-table thead {
+  background: #f9fafb;
+}
+
+.cat-table th {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  padding: 12px;
+}
+
+.cat-table td {
+  padding: 12px;
+  border-top: 1px solid #f1f1f1;
+  font-size: 13px;
+  color: #374151;
+}
+
+.cat-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.cat-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cat-cell img {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.cat-date {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.cat-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.cat-action-btn {
+  border: none;
+  background: #f3f4f6;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cat-no-data {
+  text-align: center;
+  padding: 20px;
+  color: #9ca3af;
+}
+
+.cat-search-box {
+  margin: 15px 0;
+}
+
+.cat-search-input {
+  width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  background-color:#e5e7eb;
+}
+
+.addcat-previewcontainer {
+  display: grid;   
+  grid-template-columns: repeat(3, 70px); 
+  gap: 10px;
+  margin-top: 0px;
+}
+
+.addcat-previewbox {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.addcat-previewimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.addcat-previewremove {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  background:transparent;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.addcat-previewremove:hover{
+  background-color: transparent;
+}

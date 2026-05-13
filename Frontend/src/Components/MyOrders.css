@@ -1,0 +1,240 @@
+/* MyOrders.css */
+
+.myo_mainWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.myo_pageTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 4px solid #ff6b6b;
+  padding-left: 16px;
+}
+
+.myo_pageTitle svg {
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.myo_pageTitle svg:hover {
+  color: #ff6b6b;
+}
+
+.myo_loadingText,
+.myo_errorText,
+.myo_emptyText {
+  text-align: center;
+  padding: 40px;
+  font-size: 1rem;
+  color: #666;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.myo_errorText {
+  color: #dc3545;
+}
+
+.myo_orderList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.myo_orderCard {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.myo_orderCard:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.myo_cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #f1f3f5;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.myo_orderId {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #495057;
+  letter-spacing: 0.3px;
+}
+
+.myo_trackBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.myo_trackBtn:hover {
+  background-color: #218838;
+}
+
+.myo_contentRow {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.myo_productImg {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  flex-shrink: 0;
+}
+
+.myo_orderCard .carousel {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.myo_orderCard .carousel-inner {
+  border-radius: 12px;
+}
+
+.myo_orderCard .carousel-control-prev,
+.myo_orderCard .carousel-control-next {
+  width: 20px;
+  opacity: 0.7;
+}
+
+.myo_orderCard .carousel-control-prev-icon,
+.myo_orderCard .carousel-control-next-icon {
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+}
+
+.myo_itemDetails {
+  flex: 1;
+}
+
+.myo_productName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 8px 0;
+}
+
+.myo_productMeta {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 0 0 8px 0;
+}
+
+.myo_productPrice {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin: 0;
+}
+
+.myo_cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 12px 20px;
+  border-top: 1px solid #e9ecef;
+  font-size: 0.8rem;
+}
+
+.myo_statusLabel {
+  font-weight: 500;
+  color: #495057;
+  margin-right: 8px;
+}
+
+.myo_statusValue {
+  color: #fd7e14;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.myo_deliveryText {
+  color: #6c757d;
+}
+
+.myo_totalAmount {
+  text-align: right;
+  padding: 12px 20px 16px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  border-top: 1px solid #e9ecef;
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  .myo_mainWrapper {
+    padding: 12px;
+  }
+
+  .myo_pageTitle {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+
+  .myo_contentRow {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .myo_orderCard .carousel,
+  .myo_productImg {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 12px;
+  }
+
+  .myo_itemDetails {
+    align-items: center;
+  }
+
+  .myo_cardFooter {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .myo_totalAmount {
+    text-align: center;
+  }
+
+  .myo_cardHeader {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
