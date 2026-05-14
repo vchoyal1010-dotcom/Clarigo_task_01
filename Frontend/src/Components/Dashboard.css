@@ -440,9 +440,10 @@ body{
 
   .dash-search{
     width:120px;
-    height:30px;
+    height:27px;
     padding:2px 8px;
     font-size:12px;
+    margin-bottom: 4px;
   }
 
   /* ===== MOBILE ICON FIX ===== */
@@ -455,11 +456,13 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
+    margin-top: 5px;
   }
 
   .dash-icon{
     font-size:20px;
     margin-left:0;
+    margin-top: 5px;
   }
 
   .dash-cart-count,
@@ -560,12 +563,14 @@ body{
   .dash-search{
     width:100px;
     font-size:11px;
+    margin-bottom: 3px;
   }
 
   .dash-cart-wrapper,
   .dash-fav-wrapper{
     width:22px;
     height:22px;
+    margin-top: 5px;
   }
 
   .dash-icon{
