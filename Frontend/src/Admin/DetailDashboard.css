@@ -1,6 +1,9 @@
+/* Base styles - LAPTOP/DESKTOP ME YAHI ORIGINAL CODE RAHEGA */
 .adash-container {
   padding: 20px;
   background: #f6f7fb;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .adash-title {
@@ -80,4 +83,181 @@
 .adash-empty {
   font-size: 13px;
   color: #9ca3af;
+}
+
+/* Tablet screens (768px to 1023px) - cards 3-2 me dikhenge */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .adash-container {
+    padding: 15px;
+  }
+  
+  .adash-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .adash-stats {
+    gap: 12px;
+  }
+  
+  .adash-card {
+    min-width: 140px;
+    padding: 12px;
+  }
+  
+  .adash-card p {
+    font-size: 12px;
+  }
+  
+  .adash-card h3 {
+    font-size: 16px;
+  }
+  
+  .adash-box {
+    padding: 12px;
+  }
+  
+  .adash-item img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .adash-item p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile screens (up to 767px) - cards 2,2,1 me dikhenge */
+@media screen and (max-width: 767px) {
+  .adash-container {
+    padding: 10px;
+  }
+  
+  .adash-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  /* Cards ka layout: 2, 2, 1 pattern */
+  .adash-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* Har card ki width 48% (2 cards per line) */
+  .adash-card {
+    flex: 0 0 calc(50% - 5px);
+    min-width: auto;
+    padding: 10px;
+  }
+  
+  /* Aakhri card (5th card) ko pura line me dikhane ke liye */
+  .adash-card:last-child {
+    flex: 0 0 100%;
+  }
+  
+  /* Agar total cards 5 se zyada hai to 4th card ke baad wala */
+  .adash-card:nth-child(5) {
+    flex: 0 0 100%;
+  }
+  
+  .adash-card p {
+    font-size: 11px;
+  }
+  
+  .adash-card h3 {
+    font-size: 14px;
+    margin-top: 3px;
+  }
+  
+  .adash-activity {
+    margin-top: 15px;
+  }
+  
+  .adash-box {
+    padding: 10px;
+  }
+  
+  .adash-box-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .adash-item {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .adash-item img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .adash-item p {
+    font-size: 12px;
+  }
+  
+  .adash-item span {
+    font-size: 10px;
+  }
+  
+  .adash-empty {
+    font-size: 11px;
+  }
+}
+
+/* Extra small devices (below 480px) - even tighter */
+@media screen and (max-width: 480px) {
+  .adash-container {
+    padding: 8px;
+  }
+  
+  .adash-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .adash-stats {
+    gap: 8px;
+  }
+  
+  .adash-card {
+    flex: 0 0 calc(50% - 4px);
+    padding: 8px;
+  }
+  
+  .adash-card p {
+    font-size: 10px;
+  }
+  
+  .adash-card h3 {
+    font-size: 13px;
+  }
+  
+  .adash-box {
+    padding: 8px;
+  }
+  
+  .adash-box-title {
+    font-size: 13px;
+  }
+  
+  .adash-item {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .adash-item img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .adash-item p {
+    font-size: 11px;
+  }
+  
+  .adash-item span {
+    font-size: 9px;
+  }
 }

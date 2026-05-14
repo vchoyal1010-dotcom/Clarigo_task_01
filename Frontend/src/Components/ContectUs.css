@@ -1,5 +1,9 @@
 body {
   background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* MAIN CONTAINER */
@@ -13,12 +17,15 @@ body {
   overflow: hidden;
   position: relative;
 }
-.contactus-arrow{
-    font-size: 20px;
-    color: #333;
-    cursor: pointer;
-    margin-bottom: 20px;
+
+.contactus-arrow {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: inline-block;
 }
+
 /* FAKE LAYER EFFECT */
 .contactus-container::before {
   content: "";
@@ -56,6 +63,8 @@ body {
 .contactus-title {
   font-size: 26px;
   margin-bottom: 10px;
+  font-weight: 600;
+  color: #111827;
 }
 
 .contactus-subtitle {
@@ -82,6 +91,22 @@ body {
   padding: 40px;
   display: flex;
   flex-direction: column;
+}
+
+/* FIELD WRAPPER */
+.contactus-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* LABEL STYLE */
+.contactus-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 /* ROW */
@@ -113,6 +138,7 @@ body {
 .contactus-textarea:focus {
   border-color: #333;
   background: white;
+  outline: none;
 }
 
 /* TEXTAREA */
@@ -138,40 +164,186 @@ body {
   background: #333;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+/* Tablet screens (768px to 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .contactus-container {
+    margin: 40px 20px;
+    max-width: calc(100% - 40px);
+  }
+  
+  .contactus-left {
+    padding: 30px;
+  }
+  
+  .contactus-form {
+    padding: 30px;
+  }
+  
+  .contactus-title {
+    font-size: 22px;
+  }
+  
+  .contactus-subtitle {
+    font-size: 13px;
+  }
+  
+  .contactus-label {
+    font-size: 12px;
+    margin-top: 12px;
+  }
+  
+  .contactus-input,
+  .contactus-textarea {
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  .contactus-button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile screens (up to 767px) */
+@media screen and (max-width: 767px) {
   .contactus-container {
     flex-direction: column;
+    margin: 20px 15px;
+    border-radius: 16px;
   }
-
-  .contactus-left,
+  
+  /* Hide fake layer effects on mobile */
+  .contactus-container::before,
+  .contactus-container::after {
+    display: none;
+  }
+  
+  .contactus-left {
+    width: 100%;
+    padding: 25px 20px;
+  }
+  
   .contactus-form {
     width: 100%;
+    padding: 25px 20px;
   }
-
+  
+  .contactus-title {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  
+  .contactus-subtitle {
+    font-size: 13px;
+  }
+  
+  .contactus-info {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .contactus-arrow {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  /* Row becomes column on mobile */
   .contactus-row {
     flex-direction: column;
+    gap: 0;
+  }
+  
+  .contactus-field {
+    margin-bottom: 0;
+  }
+  
+  .contactus-label {
+    font-size: 12px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  
+  /* First label ka margin top kam */
+  .contactus-form .contactus-field:first-child .contactus-label {
+    margin-top: 0;
+  }
+  
+  .contactus-input,
+  .contactus-textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  
+  .contactus-textarea {
+    height: 100px;
+  }
+  
+  .contactus-button {
+    margin-top: 18px;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
   }
 }
 
-/* FIELD WRAPPER */
-.contactus-field {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+/* Extra small devices (below 480px) */
+@media screen and (max-width: 480px) {
+  .contactus-container {
+    margin: 15px 10px;
+    border-radius: 14px;
+  }
+  
+  .contactus-left {
+    padding: 20px 15px;
+  }
+  
+  .contactus-form {
+    padding: 20px 15px;
+  }
+  
+  .contactus-title {
+    font-size: 20px;
+  }
+  
+  .contactus-subtitle {
+    font-size: 12px;
+  }
+  
+  .contactus-info {
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .contactus-arrow {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .contactus-label {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  
+  .contactus-input,
+  .contactus-textarea {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .contactus-textarea {
+    height: 90px;
+  }
+  
+  .contactus-button {
+    padding: 10px;
+    font-size: 13px;
+  }
 }
 
-/* LABEL STYLE */
-.contactus-label {
-  font-size: 13px;
-  font-weight: 600;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-/* ROW FIX */
-.contactus-row {
-  display: flex;
-  gap: 15px;
+/* Make sure body/html don't allow horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
 }

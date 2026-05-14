@@ -74,6 +74,8 @@ function Registration() {
         confirmpass: confirmpass
       });
 
+      
+
       if (response.data.success || response.status === 201) {
         setMessage(response.data.message || "Registration successful");
         

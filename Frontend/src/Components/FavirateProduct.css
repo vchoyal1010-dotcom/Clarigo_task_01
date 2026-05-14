@@ -8,15 +8,10 @@
   width: 100%;
   min-height: 100vh;
   padding: 30px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  background:
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url("your-bg.jpg"); 
-
+  background-color: #fff;
   background-size: cover;
   background-position: center;
 }
@@ -24,6 +19,8 @@
 .Fav-products-title {
   font-size: 22px;
   margin-bottom: 20px;
+  font-weight: 600;
+  color: #111827;
 }
 
 .Fav-grid {
@@ -53,12 +50,6 @@
   object-fit: cover;
 }
 
-.fav-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  z-index: 1000;
-}
 .Fav-card {
   width: 220px;
   padding: 12px;
@@ -67,10 +58,6 @@
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  position: relative;
-}
-
-.image-wrapper {
   position: relative;
 }
 
@@ -85,49 +72,66 @@
 .Fav-card .carousel-item {
   height: 180px;
 }
+
 .fav-icon {
   position: absolute;
-  
   top: 5px;
   right: 5px;
   z-index: 10;
   background: white;
   border-radius: 50%;
   padding: 4px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .Fav-product-name {
   font-size: 16px;
   margin: 8px 0;
+  font-weight: 500;
+  color: #333;
 }
-.Fav-category{
-   white-space: nowrap;
+
+.Fav-category {
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
   display: block;
   align-items: center;
   text-align: center;
+  font-size: 13px;
+  color: #666;
 }
-.Fav-category,
+
 .Fav-price {
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4f46e5;
+  margin-top: 5px;
 }
 
 .Fav-product-buttons {
   display: flex;
- 
   justify-content: space-between;
   margin-top: 10px;
+  gap: 8px;
 }
 
 .Fav-remove-btn {
   border-radius: 5px;
   border-color: antiquewhite;
   color: black;
-  border: none;
+  border: 1px solid #ddd;
+  background: white;
   padding: 6px 10px;
   cursor: pointer;
+  transition: 0.2s;
+  font-size: 12px;
+}
+
+.Fav-remove-btn:hover {
+  background: #f5f5f5;
 }
 
 .Fav-buy-btn {
@@ -138,14 +142,231 @@
   padding: 6px 15px;
   cursor: pointer;
   width: fit-content;
-  font-size: 15px;
+  font-size: 12px;
+  transition: 0.2s;
 }
 
-.Fav-back-btn{
-     background: #4f46e5;
+.Fav-buy-btn:hover {
+  background: #4338ca;
+}
+
+.Fav-back-btn {
+  background: #4f46e5;
   border-radius: 5px;
   color: white;
   border: none;
   padding: 6px 15px;
   cursor: pointer;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.Fav-back-btn:hover {
+  background: #4338ca;
+}
+
+/* Empty state */
+.Fav-empty {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-size: 16px;
+}
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+/* Laptop (1200px and below) */
+@media (max-width: 1200px) {
+  .Fav-container1 {
+    padding: 25px;
+  }
+  
+  .Fav-card {
+    width: 210px;
+  }
+  
+  .Fav-grid {
+    gap: 18px;
+  }
+}
+
+/* Tablet (992px and below) */
+@media (max-width: 992px) {
+  .Fav-container1 {
+    padding: 20px;
+  }
+  
+  .Fav-products-title {
+    font-size: 20px;
+  }
+  
+  .Fav-grid {
+    gap: 15px;
+  }
+  
+  .Fav-card {
+    width: 200px;
+    padding: 10px;
+  }
+  
+  .Fav-image,
+  .Fav-card .carousel,
+  .Fav-card .carousel-inner,
+  .Fav-card .carousel-item {
+    height: 160px;
+  }
+  
+  .Fav-product-name {
+    font-size: 15px;
+  }
+  
+  .Fav-category {
+    font-size: 12px;
+  }
+  
+  .Fav-price {
+    font-size: 14px;
+  }
+}
+
+/* Mobile (768px and below) - 2 CARDS PER LINE */
+@media (max-width: 768px) {
+  .Fav-container1 {
+    padding: 15px;
+  }
+  
+  .Fav-products-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .Fav-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .Fav-card {
+    width: calc(50% - 6px);  /* 2 cards per line */
+    max-width: 200px;
+    padding: 8px;
+  }
+  
+  .Fav-image,
+  .Fav-card .carousel,
+  .Fav-card .carousel-inner,
+  .Fav-card .carousel-item {
+    height: 140px;
+  }
+  
+  .Fav-product-name {
+    font-size: 13px;
+    margin: 6px 0;
+  }
+  
+  .Fav-category {
+    font-size: 11px;
+  }
+  
+  .Fav-price {
+    font-size: 13px;
+  }
+  
+  .Fav-product-buttons {
+    margin-top: 8px;
+    gap: 6px;
+  }
+  
+  .Fav-remove-btn {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+  
+  .Fav-buy-btn {
+    padding: 5px 12px;
+    font-size: 10px;
+  }
+  
+  .fav-icon {
+    top: 3px;
+    right: 3px;
+    padding: 3px;
+    font-size: 16px;
+  }
+  
+  .Fav-empty {
+    padding: 30px;
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .Fav-container1 {
+    padding: 10px;
+  }
+  
+  .Fav-products-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .Fav-grid {
+    gap: 8px;
+  }
+  
+  .Fav-card {
+    width: calc(50% - 4px);
+    max-width: 180px;
+    padding: 6px;
+  }
+  
+  .Fav-image,
+  .Fav-card .carousel,
+  .Fav-card .carousel-inner,
+  .Fav-card .carousel-item {
+    height: 120px;
+  }
+  
+  .Fav-product-name {
+    font-size: 12px;
+    margin: 5px 0;
+  }
+  
+  .Fav-category {
+    font-size: 10px;
+  }
+  
+  .Fav-price {
+    font-size: 12px;
+  }
+  
+  .Fav-product-buttons {
+    gap: 4px;
+  }
+  
+  .Fav-remove-btn {
+    padding: 4px 6px;
+    font-size: 9px;
+  }
+  
+  .Fav-buy-btn {
+    padding: 4px 10px;
+    font-size: 9px;
+  }
+  
+  .fav-icon {
+    top: 2px;
+    right: 2px;
+    padding: 2px;
+    font-size: 14px;
+  }
+  
+  .Fav-empty {
+    padding: 20px;
+    font-size: 12px;
+  }
 }

@@ -215,11 +215,67 @@ tr:hover {
   z-index: 999;
 }
 
+@media (max-width: 768px) {
 
-/* .content.with-sidebar {
-  padding: 20px;
-} */
+  /* ===== SIDEBAR SMALL BUT STILL VISIBLE ===== */
+  .admin-layout {
+    padding-left: 140px; /* reduced space */
+  }
 
-/* .content {
-  padding: 20px;
-} */
+  .sidebar-fixed,
+  .sidebar,
+  .sidebar-container {
+    width: 140px !important;
+    padding: 12px 8px;
+  }
+
+  /* ===== LOGO SMALL ===== */
+  .sidebar-logo {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  /* ===== ITEMS COMPACT ===== */
+  .sidebar-item {
+    padding: 6px 8px;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-icon {
+    font-size: 14px;
+  }
+
+  .sidebar-text {
+    font-size: 12px;
+  }
+
+  /* ===== CONTENT FIX ===== */
+  .content {
+    padding: 8px;
+  }
+
+  /* ===== GRID RESPONSIVE ===== */
+  .dash-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* ===== TABLE FIX ===== */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* ===== BUTTON SMALL ===== */
+  .admindash-button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}

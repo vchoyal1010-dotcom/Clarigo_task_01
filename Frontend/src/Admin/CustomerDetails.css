@@ -1,13 +1,17 @@
+/* Base styles - LAPTOP/DESKTOP ME YAHI ORIGINAL CODE RAHEGA */
 .cust-page {
   padding: 20px;
   background: #f6f7fb;
   min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .cust-title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 15px;
+  color: #111827;
 }
 
 .cust-search {
@@ -17,18 +21,22 @@
   border: 1px solid #ccc;
   font-size: smaller;
   margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .cust-table-box {
   background: #fff;
   border-radius: 12px;
   padding: 20px;
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cust-table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto;  /* Laptop pe auto rahega - original jaisa */
 }
 
 .cust-table th,
@@ -38,11 +46,24 @@
   vertical-align: middle;
 }
 
+.cust-table th {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cust-table td {
+  font-size: 13px;
+  color: #374151;
+  white-space: nowrap;
+}
+
 .cust-user {
   display: flex;
   align-items: center;
-  gap: 1px;
-
+  gap: 8px;
 }
 
 .cust-user img {
@@ -56,7 +77,8 @@
   border-radius: 20px;
   font-size: 12px;
   border: none;
-  
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .cust-status-btn.active {
@@ -72,7 +94,7 @@
 .cust-actions {
   display: flex;
   gap: 10px;
-  justify-content:flex-start;
+  justify-content: flex-start;
   margin-left: 15px;
 }
 
@@ -80,7 +102,6 @@
   cursor: pointer;
   font-size: 16px;
 }
-
 
 .cust-icon.delete {
   color: #dc2626;
@@ -91,22 +112,181 @@
 .cust-no-data {
   text-align: center;
   padding: 20px;
+  color: #9ca3af;
 }
 
 .avatar-circle {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background:brown;
+  background: brown;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  flex-shrink: 0;
 }
 
 .cust-table td.email-cell {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* ======================================== */
+/* SIRF MOBILE SCREEN (up to 767px) KE LIYE CHANGES */
+/* LAPTOP PE KUCH BHI CHANGE NAHI HOGA */
+/* ======================================== */
+
+/* Mobile screens (up to 767px) - NO SCROLLING, keep each row on ONE line */
+@media screen and (max-width: 767px) {
+  .cust-page {
+    padding: 10px;
+  }
+  
+  .cust-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .cust-search {
+    width: 100%;
+    max-width: 100%;
+    padding: 6px 8px;
+    font-size: 11px;
+    margin-bottom: 15px;
+  }
+  
+  .cust-table-box {
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .cust-table {
+    table-layout: fixed;  /* Mobile pe fixed karna padega taaki shrink ho */
+  }
+  
+  /* Mobile ke liye column width */
+  .cust-table th:nth-child(1) { width: 30%; }
+  .cust-table th:nth-child(2) { width: 35%; }
+  .cust-table th:nth-child(3) { width: 20%; }
+  .cust-table th:nth-child(4) { width: 15%; }
+  
+  .cust-table th {
+    font-size: 8px;
+    padding: 6px 4px;
+    white-space: nowrap;
+  }
+  
+  .cust-table td {
+    font-size: 9px;
+    padding: 6px 4px;
+    white-space: nowrap;
+  }
+  
+  .cust-user {
+    gap: 4px;
+  }
+  
+  .cust-user img {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .cust-status-btn {
+    padding: 2px 6px;
+    font-size: 8px;
+    border-radius: 12px;
+  }
+  
+  .cust-actions {
+    gap: 5px;
+    margin-left: 0px;
+  }
+  
+  .cust-icon {
+    font-size: 11px;
+  }
+  
+  .avatar-circle {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  
+  .cust-no-data {
+    padding: 15px;
+    font-size: 11px;
+  }
+}
+
+/* Extra small devices (below 480px) - SIRF MOBILE KE LIYE */
+@media screen and (max-width: 480px) {
+  .cust-page {
+    padding: 6px;
+  }
+  
+  .cust-title {
+    font-size: 16px;
+  }
+  
+  .cust-search {
+    padding: 5px 6px;
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .cust-table-box {
+    padding: 6px;
+  }
+  
+  .cust-table th:nth-child(1) { width: 32%; }
+  .cust-table th:nth-child(2) { width: 38%; }
+  .cust-table th:nth-child(3) { width: 18%; }
+  .cust-table th:nth-child(4) { width: 12%; }
+  
+  .cust-table th {
+    font-size: 7px;
+    padding: 4px 2px;
+  }
+  
+  .cust-table td {
+    font-size: 8px;
+    padding: 4px 2px;
+  }
+  
+  .cust-user {
+    gap: 3px;
+  }
+  
+  .cust-user img {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .cust-status-btn {
+    padding: 2px 4px;
+    font-size: 7px;
+  }
+  
+  .cust-actions {
+    gap: 3px;
+  }
+  
+  .cust-icon {
+    font-size: 10px;
+  }
+  
+  .avatar-circle {
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
+  }
+}
+
+/* Make sure body/html don't allow horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
 }

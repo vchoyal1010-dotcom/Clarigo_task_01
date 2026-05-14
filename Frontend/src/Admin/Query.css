@@ -2,15 +2,22 @@
   padding: 40px;
   background: #f5f5f5;
   min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .adminquery-title {
   font-size: 28px;
   margin-bottom: 20px;
+  font-weight: 600;
+  color: #111827;
 }
 
 .adminquery-empty {
   color: #777;
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
 }
 
 .adminquery-list {
@@ -34,15 +41,148 @@
 .adminquery-name {
   margin-bottom: 10px;
   font-size: 18px;
+  font-weight: 600;
+  color: #111827;
 }
 
 .adminquery-text {
   margin: 5px 0;
   color: #555;
+  font-size: 14px;
 }
 
 .adminquery-message {
   margin-top: 10px;
   color: #333;
   font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Tablet screens (768px to 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .adminquery-container {
+    padding: 30px;
+  }
+  
+  .adminquery-title {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+  
+  .adminquery-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+  }
+  
+  .adminquery-card {
+    padding: 18px;
+  }
+  
+  .adminquery-name {
+    font-size: 17px;
+  }
+  
+  .adminquery-text,
+  .adminquery-message {
+    font-size: 13px;
+  }
+  
+  .adminquery-empty {
+    font-size: 15px;
+    padding: 35px;
+  }
+}
+
+/* Mobile screens (up to 767px) - Cards 1 per line, font chhota */
+@media screen and (max-width: 767px) {
+  .adminquery-container {
+    padding: 15px;
+  }
+  
+  .adminquery-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .adminquery-list {
+    grid-template-columns: 1fr;  /* Mobile pe 1 card per line */
+    gap: 15px;
+  }
+  
+  .adminquery-card {
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .adminquery-card:hover {
+    transform: translateY(-3px);  /* Mobile pe kam hover effect */
+  }
+  
+  .adminquery-name {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .adminquery-text {
+    margin: 4px 0;
+    font-size: 12px;
+  }
+  
+  .adminquery-message {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+  
+  .adminquery-empty {
+    font-size: 14px;
+    padding: 30px 20px;
+  }
+}
+
+/* Extra small devices (below 480px) - Aur bhi chhota */
+@media screen and (max-width: 480px) {
+  .adminquery-container {
+    padding: 10px;
+  }
+  
+  .adminquery-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .adminquery-list {
+    gap: 12px;
+  }
+  
+  .adminquery-card {
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .adminquery-name {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  
+  .adminquery-text {
+    font-size: 11px;
+    margin: 3px 0;
+  }
+  
+  .adminquery-message {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  
+  .adminquery-empty {
+    font-size: 13px;
+    padding: 25px 15px;
+  }
+}
+
+/* Make sure body/html don't allow horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
 }

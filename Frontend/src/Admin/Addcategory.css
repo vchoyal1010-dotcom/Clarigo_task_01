@@ -1,27 +1,33 @@
+/* Base styles */
 .cat-container1 {
   width: 100%;
-  padding:20px 20px;
+  padding: 20px 20px;
   background: #f6f7fb;
+  box-sizing: border-box;
+  /* Prevent any overflow that could cause scrolling */
+  overflow-x: hidden;
 }
+
 .cat-title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 15px;
   color: #111827;
 }
+
 .cat-form {
- display: flex;
-gap: 10px;
-align-items: center;
-flex-wrap: wrap;
-
-background: #fff;
-padding: 15px;
-border-radius: 10px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-
-height: 100px;       
-overflow: hidden;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  /* Remove fixed height to allow content to determine size */
+  min-height: auto;
+  overflow: visible;
+  flex-wrap: wrap;
 }
 
 .cat-input,
@@ -31,16 +37,19 @@ overflow: hidden;
   border-radius: 6px;
   font-size: 13px;
   background: #f9fafb;
+  box-sizing: border-box;
 }
 
 .cat-submit-btn {
   padding: 10px 14px;
-  background: #0f172a; 
+  background: #0f172a;
   color: #fff;
   border: none;
   border-radius: 6px;
   font-size: 13px;
   cursor: pointer;
+  /* Ensure button stays inline */
+  flex-shrink: 0;
 }
 
 .cat-submit-btn:hover {
@@ -53,12 +62,22 @@ overflow: hidden;
   border-radius: 12px;
   padding: 15px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  overflow-x: auto;
+  width: 100%;
 }
 
 .cat-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;  /* YAHI CHANGE HAI - table ko full width spread karne ke liye */
 }
+
+/* Columns ki width set karo according to your table columns */
+.cat-table th:nth-child(1) { width: 20%; }  /* Image/Cat Name column */
+.cat-table th:nth-child(2) { width: 15%; }  /* Category column */
+.cat-table th:nth-child(3) { width: 15%; }  /* Breed column */
+.cat-table th:nth-child(4) { width: 20%; }  /* Date column */
+.cat-table th:nth-child(5) { width: 30%; }  /* Actions column */
 
 .cat-table thead {
   background: #f9fafb;
@@ -70,6 +89,9 @@ overflow: hidden;
   color: #6b7280;
   text-transform: uppercase;
   padding: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cat-table td {
@@ -77,6 +99,9 @@ overflow: hidden;
   border-top: 1px solid #f1f1f1;
   font-size: 13px;
   color: #374151;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cat-table tbody tr:hover {
@@ -87,6 +112,7 @@ overflow: hidden;
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
 }
 
 .cat-cell img {
@@ -94,16 +120,19 @@ overflow: hidden;
   height: 35px;
   border-radius: 6px;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .cat-date {
   font-size: 12px;
   color: #6b7280;
+  white-space: nowrap;
 }
 
 .cat-actions {
   display: flex;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .cat-action-btn {
@@ -113,6 +142,7 @@ overflow: hidden;
   border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
+  flex-shrink: 0;
 }
 
 .cat-no-data {
@@ -131,12 +161,13 @@ overflow: hidden;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   font-size: 13px;
-  background-color:#e5e7eb;
+  background-color: #e5e7eb;
+  box-sizing: border-box;
 }
 
 .addcat-previewcontainer {
-  display: grid;   
-  grid-template-columns: repeat(3, 70px); 
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
   gap: 10px;
   margin-top: 0px;
 }
@@ -159,15 +190,341 @@ overflow: hidden;
   position: absolute;
   top: -4px;
   right: -2px;
-  background:transparent;
+  background: transparent;
   color: black;
   border: none;
   border-radius: 50%;
-  
   cursor: pointer;
   font-size: 16px;
 }
 
-.addcat-previewremove:hover{
+.addcat-previewremove:hover {
   background-color: transparent;
+}
+
+/* Laptop and Desktop screens (1024px and above) - BUTTON SIDE ME AAYEGA */
+@media screen and (min-width: 1024px) {
+  .cat-form {
+    /* Button ko side me lane ke liye */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  
+  /* Input fields ko left side group karo */
+  .cat-form > .cat-input,
+  .cat-form > .cat-input-file,
+  .cat-form > .addcat-previewcontainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+  }
+  
+  /* Button ko right side me manually push karo */
+  .cat-submit-btn {
+    margin-left: auto;
+    order: 2;
+  }
+  
+  /* Preview container ko left side hi rehne do */
+  .addcat-previewcontainer {
+    order: 1;
+    margin-left: 0;
+  }
+  
+  /* Input fields ko sequence me rakho */
+  .cat-input:nth-of-type(1) {
+    order: 0;
+  }
+  
+  .cat-input-file {
+    order: 1;
+  }
+}
+
+/* Alternative method - agar upar wala kaam nahi karta to is media query ko use karo */
+@media screen and (min-width: 1024px) {
+  .cat-form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    position: relative;
+  }
+  
+  .cat-submit-btn {
+    position: static;
+    margin-left: auto;
+  }
+  
+  /* Saare inputs aur preview container ko left side rakho */
+  .cat-input,
+  .cat-input-file,
+  .addcat-previewcontainer {
+    margin-right: 10px;
+  }
+}
+
+/* Tablet screens (768px to 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .cat-container1 {
+    padding: 15px;
+  }
+  
+  .cat-table-box {
+    padding: 10px;
+  }
+  
+  .cat-table th,
+  .cat-table td {
+    padding: 8px 6px;
+  }
+  
+  /* Tablet me bhi button side me rakhne ke liye */
+  .cat-form {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  
+  .cat-submit-btn {
+    margin-left: auto;
+  }
+}
+
+/* Mobile screens (up to 767px) - NO SCROLLING, keep each row on ONE line */
+@media screen and (max-width: 767px) {
+  /* Reduce container padding */
+  .cat-container1 {
+    padding: 10px;
+  }
+  
+  /* Reduce title size */
+  .cat-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Mobile me button neeche nhi, side me hi rahega but wrap ho sakta hai */
+  .cat-form {
+    gap: 8px;
+    padding: 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  /* Reduce input sizes */
+  .cat-input,
+  .cat-input-file {
+    padding: 6px 8px;
+    font-size: 11px;
+    flex: 1 1 auto;
+    min-width: 100px;
+  }
+  
+  /* Reduce button size - mobile me bhi side me */
+  .cat-submit-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+    margin-left: auto;
+  }
+  
+  /* Table adjustments - keep text on one line, just smaller */
+  .cat-table-box {
+    padding: 8px;
+    margin-top: 12px;
+    overflow-x: auto;
+  }
+  
+  /* Mobile ke liye column width adjust */
+  .cat-table th:nth-child(1) { width: 25%; }
+  .cat-table th:nth-child(2) { width: 15%; }
+  .cat-table th:nth-child(3) { width: 15%; }
+  .cat-table th:nth-child(4) { width: 20%; }
+  .cat-table th:nth-child(5) { width: 25%; }
+  
+  /* Reduce font sizes significantly but keep each cell content on one line */
+  .cat-table th {
+    font-size: 8px;
+    padding: 6px 4px;
+    white-space: nowrap;
+  }
+  
+  .cat-table td {
+    font-size: 9px;
+    padding: 6px 4px;
+    white-space: nowrap;
+  }
+  
+  /* Reduce image size in table */
+  .cat-cell img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .cat-cell {
+    gap: 5px;
+  }
+  
+  /* Reduce date font size */
+  .cat-date {
+    font-size: 8px;
+  }
+  
+  /* Reduce action buttons size */
+  .cat-actions {
+    gap: 4px;
+  }
+  
+  .cat-action-btn {
+    padding: 4px 5px;
+    font-size: 8px;
+  }
+  
+  /* Reduce search input size */
+  .cat-search-input {
+    width: 100%;
+    max-width: 200px;
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+  
+  /* Preview container adjustments */
+  .addcat-previewcontainer {
+    grid-template-columns: repeat(3, 45px);
+    gap: 6px;
+  }
+  
+  .addcat-previewbox {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .addcat-previewremove {
+    font-size: 12px;
+    top: -6px;
+    right: -4px;
+  }
+  
+  /* Ensure table rows don't wrap */
+  .cat-table tr {
+    white-space: nowrap;
+  }
+  
+  /* Override any potential wrapping */
+  .cat-table td,
+  .cat-table th {
+    word-break: keep-all;
+    overflow-wrap: normal;
+  }
+}
+
+/* Extra small devices (below 480px) - even tighter */
+@media screen and (max-width: 480px) {
+  .cat-container1 {
+    padding: 6px;
+  }
+  
+  .cat-title {
+    font-size: 16px;
+  }
+  
+  .cat-form {
+    padding: 8px;
+    gap: 6px;
+  }
+  
+  .cat-input,
+  .cat-input-file {
+    font-size: 10px;
+    padding: 5px 6px;
+  }
+  
+  .cat-submit-btn {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+  
+  .cat-table th:nth-child(1) { width: 30%; }
+  .cat-table th:nth-child(2) { width: 12%; }
+  .cat-table th:nth-child(3) { width: 12%; }
+  .cat-table th:nth-child(4) { width: 20%; }
+  .cat-table th:nth-child(5) { width: 26%; }
+  
+  .cat-table th {
+    font-size: 7px;
+    padding: 4px 3px;
+  }
+  
+  .cat-table td {
+    font-size: 8px;
+    padding: 4px 3px;
+  }
+  
+  .cat-cell img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .cat-action-btn {
+    padding: 3px 4px;
+    font-size: 7px;
+  }
+  
+  .cat-search-input {
+    font-size: 10px;
+    padding: 5px 6px;
+    max-width: 160px;
+  }
+  
+  .addcat-previewcontainer {
+    grid-template-columns: repeat(3, 35px);
+    gap: 4px;
+  }
+  
+  .addcat-previewbox {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .addcat-previewremove {
+    font-size: 10px;
+    top: -5px;
+    right: -3px;
+  }
+}
+
+/* Make sure body/html don't allow horizontal scroll on entire page */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* For any table that might overflow on mobile - we want horizontal scroll ONLY on table container */
+.cat-table-box {
+  max-width: 100%;
+}
+
+/* Laptop screens ke liye special - button ko forcefully side me laane ke liye */
+@media screen and (min-width: 1024px) {
+  .cat-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  /* Input field ke baad button ko side me lao */
+  .cat-submit-btn {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  
+  /* Preview container ko left side me rakho */
+  .addcat-previewcontainer {
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
 }

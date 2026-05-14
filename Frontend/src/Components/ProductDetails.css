@@ -2,8 +2,8 @@
 .pd-container {
   padding: 30px;
   max-width: 1200px;
-  margin:10px auto;
-  background-color: #f0eeed; /* Light beige background from image */
+  margin: 10px auto;
+  background-color: #f0eeed;
   display: flex;
   gap: 30px;
   align-items: flex-start;
@@ -42,16 +42,16 @@
 
 /* Carousel wrapper ko fix karne ke liye */
 .pd-card .carousel {
-  width: 120px ;  /* Jo size aapne image ko diya hai wahi yahan bhi dein */
-  height: 120px ;
-  flex-shrink: 0;          /* Taki flexbox isko chhota na kare */
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
   border-radius: 12px;
-  overflow: hidden;        /* Taki corners round hi rahein */
+  overflow: hidden;
 }
 
-.pd-remove-btn{
-   padding: 0px;
-   margin-top: 0px;
+.pd-remove-btn {
+  padding: 0px;
+  margin-top: 0px;
   top: 0px;
   right: 10px;
   background: transparent;
@@ -59,11 +59,12 @@
   font-size: 18px;
   cursor: pointer;
 }
+
 /* Image style */
 .pd-image {
-  width: 100% !important;   /* Ab ye apne parent (Carousel) ka 100% legi */
+  width: 100% !important;
   height: 100% !important;
-  object-fit: cover;        /* Image kategi nahi, center se fill hogi */
+  object-fit: cover;
   display: block;
 }
 
@@ -86,7 +87,7 @@
   font-size: 18px;
   font-weight: 700;
   margin: 0;
-  display:flex;
+  display: flex;
 }
 
 .pd-text {
@@ -127,14 +128,14 @@
 }
 
 .discount-text {
-  color: #ff3333; /* Red color for discount */
+  color: #ff3333;
 }
 
 /* Buttons */
 .pd-buy-btn {
   width: 100%;
   padding: 15px;
-  background: #000000; /* Black button like the image */
+  background: #000000;
   color: white;
   border: none;
   border-radius: 50px;
@@ -160,16 +161,17 @@
   width: fit-content;
   align-self: flex-end;
 }
+
 .quantity-controls button {
   background: transparent;
   border: none;
   font-size: 18px;
   cursor: pointer;
 }
+
 .quantity-controls123 {
   display: flex;
   align-items: center;
-  /* background: #f0f0f0; */
   border-radius: 50px;
   padding: 4px 15px;
   gap: 15px;
@@ -178,4 +180,260 @@
   width: fit-content;
   align-self: flex-end;
   background-color: none;
+}
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+/* Tablet (768px to 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .pd-container {
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .pd-title {
+    font-size: 22px;
+  }
+  
+  .cart-items-wrapper {
+    padding: 15px;
+  }
+  
+  .pd-card {
+    gap: 12px;
+    padding: 15px 0;
+  }
+  
+  .pd-card .carousel,
+  .pd-card .carousel-inner,
+  .pd-card .carousel-item {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .pd-name {
+    font-size: 16px;
+  }
+  
+  .pd-text {
+    font-size: 13px;
+  }
+  
+  .pd-total {
+    font-size: 18px;
+  }
+  
+  .pd-summary {
+    padding: 20px;
+  }
+  
+  .summary-row {
+    font-size: 14px;
+  }
+  
+  .summary-total {
+    font-size: 18px;
+  }
+  
+  .pd-buy-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile (up to 767px) - Right summary ko niche kar diya */
+@media screen and (max-width: 767px) {
+  .pd-container {
+    flex-direction: column;  /* Right summary niche aayega */
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  .pd-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  /* Left section - full width */
+  .cart-items-wrapper {
+    width: 100%;
+    flex: auto;
+    padding: 12px;
+    border-radius: 15px;
+  }
+  
+  /* Right section - full width, niche aayega */
+  .pd-summary {
+    width: 100%;
+    flex: auto;
+    padding: 18px;
+    border-radius: 15px;
+    order: 2;  /* Ensure it comes after cart items */
+  }
+  
+  /* Cart items */
+  .pd-card {
+    flex-direction: column;  /* Image upar, content neeche */
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 15px 0;
+  }
+  
+  .pd-card .carousel,
+  .pd-card .carousel-inner,
+  .pd-card .carousel-item {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .pd-info {
+    align-items: center;
+    width: 100%;
+  }
+  
+  .pd-name {
+    font-size: 16px;
+    justify-content: center;
+  }
+  
+  .pd-text {
+    font-size: 12px;
+  }
+  
+  .pd-total {
+    font-size: 18px;
+  }
+  
+  .pd-remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+  }
+  
+  /* Quantity controls */
+  .quantity-controls {
+    align-self: center;
+    margin-top: 8px;
+    padding: 4px 12px;
+    gap: 12px;
+  }
+  
+  .quantity-controls button {
+    font-size: 16px;
+  }
+  
+  .quantity-controls span {
+    font-size: 14px;
+  }
+  
+  /* Order summary - mobile pe */
+  .summary-row {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .summary-total {
+    font-size: 18px;
+    padding-top: 12px;
+  }
+  
+  .discount-text {
+    font-size: 14px;
+  }
+  
+  .pd-buy-btn {
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}
+
+/* Extra small devices (below 480px) */
+@media screen and (max-width: 480px) {
+  .pd-container {
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  .pd-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .cart-items-wrapper {
+    padding: 10px;
+    border-radius: 12px;
+  }
+  
+  .pd-card {
+    padding: 12px 0;
+    gap: 8px;
+  }
+  
+  .pd-card .carousel,
+  .pd-card .carousel-inner,
+  .pd-card .carousel-item {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .pd-name {
+    font-size: 15px;
+  }
+  
+  .pd-text {
+    font-size: 11px;
+  }
+  
+  .pd-total {
+    font-size: 16px;
+  }
+  
+  .pd-remove-btn {
+    font-size: 14px;
+    top: 8px;
+    right: 8px;
+  }
+  
+  .quantity-controls {
+    padding: 3px 10px;
+    gap: 10px;
+  }
+  
+  .quantity-controls button {
+    font-size: 14px;
+  }
+  
+  .quantity-controls span {
+    font-size: 13px;
+  }
+  
+  /* Order summary */
+  .pd-summary {
+    padding: 15px;
+    border-radius: 12px;
+  }
+  
+  .summary-row {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .summary-total {
+    font-size: 16px;
+    padding-top: 10px;
+  }
+  
+  .discount-text {
+    font-size: 13px;
+  }
+  
+  .pd-buy-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
 }

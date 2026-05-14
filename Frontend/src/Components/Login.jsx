@@ -64,6 +64,7 @@ function Login() {
     setMessage("");
 
     try {
+      console.log(data)
       const response = await api.post("/user/logink", data);
       
       
@@ -148,7 +149,7 @@ function Login() {
           <label className="login-label">Password</label>
           <div className="password-wrapper">
             <input
-              placeholder="Enter password"
+              placeholder="Enter 6 digit password"
               className="login-input"
               type={showPassword ? "text" : "password"}
               value={password}

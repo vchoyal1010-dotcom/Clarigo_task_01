@@ -4,20 +4,24 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
+  box-sizing: border-box;
+  padding: 15px;
 }
 
 .support-box {
   background: #d9e4e2;
   width: 700px;
+  max-width: 100%;
   border-radius: 20px;
   display: flex;
   padding: 30px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .close-btn {
@@ -31,6 +35,15 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: #888;
 }
 
 .support-content {
@@ -40,15 +53,20 @@
 .tag {
   font-size: 12px;
   letter-spacing: 1px;
+  color: #555;
 }
 
 .support-content h2 {
   margin: 10px 0;
+  font-size: 24px;
+  color: #111827;
 }
 
 .desc {
   font-size: 14px;
   margin-bottom: 20px;
+  color: #555;
+  line-height: 1.5;
 }
 
 .support-content input {
@@ -57,6 +75,13 @@
   border-radius: 8px;
   border: 1px solid #999;
   margin-bottom: 15px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.support-content input:focus {
+  outline: none;
+  border-color: #333;
 }
 
 .submit-btn {
@@ -67,9 +92,147 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #333;
+}
+
+.support-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .support-image img {
-    margin-top: 30px;
+  margin-top: 30px;
   width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablet screens (up to 900px) */
+@media screen and (max-width: 900px) {
+  .support-box {
+    width: 600px;
+    padding: 25px;
+  }
+  
+  .support-image img {
+    width: 160px;
+    margin-top: 20px;
+  }
+  
+  .support-content h2 {
+    font-size: 22px;
+  }
+  
+  .support-content input,
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+/* Mobile screens (up to 767px) */
+@media screen and (max-width: 767px) {
+  .support-overlay {
+    padding: 10px;
+    align-items: center;
+  }
+  
+  .support-box {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .close-btn {
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .tag {
+    font-size: 10px;
+  }
+  
+  .support-content h2 {
+    font-size: 20px;
+    margin: 8px 0;
+  }
+  
+  .desc {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  
+  .support-content input {
+    padding: 10px 12px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  
+  .submit-btn {
+    padding: 12px;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .support-image {
+    order: -1; /* Image ko upar laane ke liye */
+    margin-bottom: 10px;
+  }
+  
+  .support-image img {
+    width: 120px;
+    margin-top: 0;
+  }
+}
+
+/* Extra small devices (below 480px) */
+@media screen and (max-width: 480px) {
+  .support-overlay {
+    padding: 8px;
+  }
+  
+  .support-box {
+    padding: 16px;
+    border-radius: 14px;
+  }
+  
+  .close-btn {
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+  
+  .support-content h2 {
+    font-size: 18px;
+  }
+  
+  .desc {
+    font-size: 12px;
+  }
+  
+  .support-content input {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .submit-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .support-image img {
+    width: 100px;
+  }
 }

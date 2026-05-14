@@ -2,12 +2,56 @@
   padding: 20px;
   background: #f6f7fb;
   min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .sap-title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
+  color: #111827;
+}
+
+.sap-search-box {
+  margin-bottom: 15px;
+}
+
+.sap-search-input {
+  width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  background-color: #e5e7eb;
+  box-sizing: border-box;
+}
+
+.sap-stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.sap-stat-box {
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  min-width: 140px;
+}
+
+.sap-stat-box p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 5px;
+}
+
+.sap-stat-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
 }
 
 .sap-table-box {
@@ -15,6 +59,8 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  overflow-x: auto;
+  width: 100%;
 }
 
 .sap-table {
@@ -62,6 +108,7 @@
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 12px;
+  white-space: nowrap;
 }
 
 .sap-active {
@@ -86,124 +133,249 @@
   font-size: 16px;
 }
 
-
-
 .sap-no-data {
   text-align: center;
   padding: 20px;
+  color: #9ca3af;
 }
 
-
-@media (max-width: 768px) {
-
+/* Tablet screens (768px to 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
   .sap-page {
     padding: 15px;
   }
-
+  
   .sap-title {
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 15px;
   }
-
+  
+  .sap-search-input {
+    width: 220px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  
+  .sap-stats {
+    gap: 12px;
+  }
+  
+  .sap-stat-box {
+    padding: 10px 15px;
+    min-width: 120px;
+  }
+  
+  .sap-stat-box p {
+    font-size: 12px;
+  }
+  
+  .sap-stat-box h3 {
+    font-size: 16px;
+  }
+  
   .sap-table-box {
     padding: 15px;
   }
-
+  
   .sap-table th,
   .sap-table td {
     padding: 10px 8px;
     font-size: 13px;
   }
-
+  
   .sap-product-cell img {
     width: 32px;
     height: 32px;
   }
-
+  
   .sap-product-cell span {
     font-size: 13px;
   }
-
+  
+  .sap-status {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+  
+  .sap-icon {
+    font-size: 15px;
+  }
 }
 
-@media (max-width: 600px) {
-
-  .sap-table-box {
-    overflow-x: auto;
-  }
-
-  .sap-table {
-    min-width: 600px;
-  }
-
-}
-
-@media (max-width: 480px) {
-
+/* Mobile screens (up to 767px) */
+@media screen and (max-width: 767px) {
   .sap-page {
-    padding: 10px;
+    padding: 12px;
   }
-
+  
   .sap-title {
-    font-size: 16px;
+    font-size: 18px;
+    margin-bottom: 12px;
   }
-
+  
+  .sap-search-box {
+    margin-bottom: 12px;
+  }
+  
+  .sap-search-input {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  
+  /* Stats boxes - mobile me 2 per line */
+  .sap-stats {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .sap-stat-box {
+    flex: 0 0 calc(50% - 5px);
+    min-width: auto;
+    padding: 10px 12px;
+  }
+  
+  .sap-stat-box p {
+    font-size: 11px;
+  }
+  
+  .sap-stat-box h3 {
+    font-size: 15px;
+  }
+  
+  .sap-table-box {
+    padding: 12px;
+    border-radius: 10px;
+  }
+  
+  .sap-table {
+    min-width: 550px; /* Scroll ke liye */
+  }
+  
   .sap-table th,
   .sap-table td {
-    font-size: 12px;
     padding: 8px 6px;
+    font-size: 11px;
   }
-
+  
+  .sap-table th {
+    font-size: 10px;
+  }
+  
   .sap-product-cell {
     gap: 6px;
   }
-
+  
   .sap-product-cell img {
     width: 28px;
     height: 28px;
   }
-
+  
+  .sap-product-cell span {
+    font-size: 11px;
+  }
+  
+  .sap-status {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  
   .sap-actions {
     gap: 6px;
   }
-
+  
+  .sap-icon {
+    font-size: 13px;
+  }
+  
+  .sap-no-data {
+    padding: 15px;
+    font-size: 12px;
+  }
 }
 
-.sap-search-box {
-  margin-bottom: 15px;
+/* Extra small devices (below 480px) */
+@media screen and (max-width: 480px) {
+  .sap-page {
+    padding: 8px;
+  }
+  
+  .sap-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .sap-search-input {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+  
+  .sap-stats {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .sap-stat-box {
+    padding: 8px 10px;
+  }
+  
+  .sap-stat-box p {
+    font-size: 10px;
+  }
+  
+  .sap-stat-box h3 {
+    font-size: 14px;
+  }
+  
+  .sap-table-box {
+    padding: 8px;
+  }
+  
+  .sap-table {
+    min-width: 480px;
+  }
+  
+  .sap-table th,
+  .sap-table td {
+    padding: 6px 4px;
+    font-size: 10px;
+  }
+  
+  .sap-table th {
+    font-size: 9px;
+  }
+  
+  .sap-product-cell img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .sap-product-cell span {
+    font-size: 10px;
+  }
+  
+  .sap-status {
+    font-size: 8px;
+    padding: 2px 5px;
+  }
+  
+  .sap-actions {
+    gap: 4px;
+  }
+  
+  .sap-icon {
+    font-size: 12px;
+  }
+  
+  .sap-no-data {
+    padding: 12px;
+    font-size: 11px;
+  }
 }
 
-.sap-search-input {
-  width: 250px;
-  padding: 10px 12px;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  font-size: 13px;
-  background-color:#e5e7eb;
-}
-
-.sap-stats {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-
-.sap-stat-box {
-  background: #ffffff;
-  padding: 12px 18px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  min-width: 140px;
-}
-
-.sap-stat-box p {
-  font-size: 13px;
-  color: #6b7280;
-  margin-bottom: 5px;
-}
-
-.sap-stat-box h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111827;
+/* Make sure body/html don't allow horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
 }
