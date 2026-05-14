@@ -69,15 +69,15 @@ body{
 }
 
 .dash-icon{
-  font-size:28px;
+  font-size:30px;
   color:rgb(207, 114, 114);
   margin-left:10px;
 }
 
 .dash-cart-count{
   position:absolute;
-  top:-7px;
-  right:-8px;
+  top:-4px;
+  right:-6px;
   background:rgb(128, 113, 113);
   color:white;
   min-width:18px;
@@ -93,8 +93,8 @@ body{
 
 .dash-fav-count{
   position:absolute;
-  top:-7px;
-  right:-7px;
+  top:-4px;
+  right:-6px;
   background:rgb(128, 113, 113);
   color:white;
   min-width:18px;

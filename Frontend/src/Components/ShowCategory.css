@@ -185,6 +185,7 @@
 }
 
 /* ===== CATEGORIES SECTION ===== */
+
 .sc-categories {
   display: flex;
   gap: 20px;
@@ -197,6 +198,11 @@
   width: 120px;
   cursor: pointer;
   text-align: center;
+  transition: 0.3s;
+}
+
+.sc-category-card:hover {
+  transform: translateY(-2px);
 }
 
 .sc-category-image {
@@ -215,10 +221,12 @@
 
 /* Laptop / Small Desktop */
 @media (max-width: 1200px) {
+
   .sc-search {
     width: 30%;
     margin-left: auto;
   }
+
   .sc-card {
     flex: 1 1 220px;
   }
@@ -226,26 +234,33 @@
 
 /* Tablet */
 @media (max-width: 992px) {
+
   .sc-container1 {
     padding: 25px;
   }
+
   .sc-slide-image {
     height: 260px;
   }
+
   .sc-card {
     flex: 1 1 45%;
     max-width: 100%;
   }
+
   .sc-category-card {
     width: calc(33.33% - 14px);
   }
+
   .sc-category-image {
     height: 80px;
   }
 }
 
 /* ===== MOBILE (max-width: 768px) ===== */
+
 @media (max-width: 768px) {
+
   .sc-container1 {
     padding: 15px;
   }
@@ -259,7 +274,8 @@
     margin: 15px 0 10px 0;
   }
 
-  /* Products - 2 per line */
+  /* Products */
+
   .sc-grid {
     gap: 12px;
     justify-content: space-between;
@@ -287,32 +303,37 @@
     padding: 6px;
   }
 
-  /* ===== CATEGORIES - 2 PER LINE WITH KAM HEIGHT ===== */
+  /* ===== CATEGORIES MOBILE SMALL ===== */
+
   .sc-categories {
-    gap: 12px;
+    gap: 10px;
     justify-content: space-between;
   }
 
   .sc-category-card {
-    width: calc(50% - 6px);
-    max-width: calc(50% - 6px);
-    margin-bottom: 10px;
+    width: calc(50% - 5px);
+    max-width: calc(50% - 5px);
+    padding: 6px;
+    border-radius: 8px;
+    margin-bottom: 8px;
   }
 
   .sc-category-image {
-    height: 60px;  /* Height kam kiya 100px se 60px */
-    border-radius: 8px;
+    height: 55px;
+    border-radius: 6px;
   }
 
   .sc-category-name {
-    margin-top: 6px;
-    font-size: 12px;
+    margin-top: 4px;
+    font-size: 11px;
     font-weight: 500;
   }
 }
 
-/* Small Mobile (max-width: 480px) */
+/* ===== SMALL MOBILE ===== */
+
 @media (max-width: 480px) {
+
   .sc-container1 {
     padding: 10px;
   }
@@ -331,6 +352,7 @@
   }
 
   /* Products */
+
   .sc-grid {
     gap: 8px;
   }
@@ -357,23 +379,27 @@
     padding: 5px;
   }
 
-  /* Categories - 2 per line, height aur bhi kam */
+  /* ===== CATEGORIES EXTRA SMALL ===== */
+
   .sc-categories {
-    gap: 8px;
+    gap: 6px;
   }
 
   .sc-category-card {
-    width: calc(50% - 4px);
-    max-width: calc(50% - 4px);
+    width: calc(50% - 3px);
+    max-width: calc(50% - 3px);
+    padding: 4px;
+    border-radius: 6px;
   }
 
   .sc-category-image {
-    height: 50px;  /* Height aur bhi kam */
-    border-radius: 8px;
+    height: 45px;
+    border-radius: 6px;
   }
 
   .sc-category-name {
-    font-size: 10px;
-    margin-top: 4px;
+    font-size: 9px;
+    margin-top: 3px;
+    font-weight: 500;
   }
 }
